@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+     "test": "playwright test",
+  "test:cross-browser": "CFFIXED_USER_HOME=/tmp/playwright-firefox-home playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
