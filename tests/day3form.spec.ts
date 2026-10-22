@@ -1,7 +1,9 @@
+import { getLocalPageUrl } from './utils/local-page';
+
 
 import { test } from '@playwright/test';
 test('fill login fields using accessible locators', async ({ page }) => {
-  await page.goto('file:///Users/nanjappa/Projects/tests/pages/day3.html');
+  await page.goto(getLocalPageUrl('tests/pages/day3.html'));
    const elements = page.getByRole('button');
   const count = await elements.count();
   console.log('Total DOM elements:', count);

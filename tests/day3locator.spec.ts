@@ -1,6 +1,8 @@
+import { getLocalPageUrl } from './utils/local-page';
+
 import { test } from '@playwright/test';
 test('click the correct product button', async ({ page }) => {
-  await page.goto('file:///Users/nanjappa/Projects/tests/pages/day3.html');
+  await page.goto(getLocalPageUrl('tests/pages/day3.html'));
   const tshirt = page.locator('section').filter({
     has: page.getByRole('heading', { name: 'Cotton T-shirt' })
   });

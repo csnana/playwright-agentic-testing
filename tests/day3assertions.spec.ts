@@ -1,7 +1,9 @@
+import { getLocalPageUrl } from './utils/local-page';
+
 
 import { test, expect } from '@playwright/test';
 test('verify shopping page state', async ({ page }) => {
-  await page.goto('file:///Users/nanjappa/Projects/tests/pages/day3.html');
+  await page.goto(getLocalPageUrl('tests/pages/day3.html'));
   const username = page.getByLabel('Username');
   await expect(username).toBeVisible();
   await expect(username).toHaveValue('');

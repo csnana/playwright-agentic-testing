@@ -1,7 +1,9 @@
+import { getLocalPageUrl } from './utils/local-page';
+
 
 import { test } from '@playwright/test';
 test('compare locator strategies', async ({ page }) => {
-  await page.goto('file:///Users/nanjappa/Projects/tests/pages/day3.html');
+  await page.goto(getLocalPageUrl('tests/pages/day3.html'));
   const cssLocator = page.locator('#login-button');
   const roleLocator = page.getByRole('button', { name: 'Login' });
   const textLocator = page.getByText('Login', { exact: true });

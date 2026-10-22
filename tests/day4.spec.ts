@@ -1,6 +1,8 @@
+import { getLocalPageUrl } from './utils/local-page';
+
 import { test, expect } from '@playwright/test';
 test.beforeEach(async ({ page }) => {
-  await page.goto('file:///Users/nanjappa/Projects/tests/pages/day3.html');
+  await page.goto(getLocalPageUrl('tests/pages/day3.html'));
 });
 test('login button is visible', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();

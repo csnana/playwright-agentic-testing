@@ -1,3 +1,5 @@
+import { getLocalPageUrl } from './utils/local-page';
+
 import { test, expect } from '@playwright/test';
 async function addProductToCart(page: import('@playwright/test').Page, productName: string, quantity: string) {
   const product = page.locator('section').filter({
@@ -7,7 +9,7 @@ async function addProductToCart(page: import('@playwright/test').Page, productNa
   await product.getByRole('button', { name: 'Add to cart' }).click();
 }
 test.beforeEach(async ({ page }) => {
-  await page.goto('file:///Users/nanjappa/Projects/tests/pages/day3.html');
+  await page.goto(getLocalPageUrl('tests/pages/day3.html'));
 });
 test('add two T-shirts to cart', async ({ page }) => {
   await addProductToCart(page, 'Cotton T-shirt', '2');
