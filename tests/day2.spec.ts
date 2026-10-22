@@ -2,7 +2,7 @@ import { test, expect, type Browser, type Page } from '@playwright/test';
 let browser: Browser;
 let page: Page;
 test.beforeAll(async ({ playwright }) => {
-  browser = await playwright.webkit.launch({ headless: false });
+  browser = await playwright.webkit.launch({ headless: true });
   const context = await browser.newContext();
   page = await context.newPage();
   console.log('Browser launched');

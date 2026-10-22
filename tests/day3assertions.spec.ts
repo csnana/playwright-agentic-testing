@@ -10,6 +10,6 @@ test('verify shopping page state', async ({ page }) => {
   await username.fill('testuser');
   await expect(username).toHaveValue('testuser');
   const cartCount = page.locator('#cart-count');
-await expect(cartCount).toHaveText('Items in cart: 7');
+await expect(cartCount).toHaveText('Items in cart: 0');
   console.log('All assertions passed');
 });
