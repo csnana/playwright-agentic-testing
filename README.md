@@ -48,7 +48,3 @@ After a test run, open the generated Playwright HTML report:
 ```bash
 npx playwright show-report
 ```
-
-## Contributing
-
-Community contributions are welcome. Feel free to open an issue or submit a pull request with an example, improvement, or bug fix.
